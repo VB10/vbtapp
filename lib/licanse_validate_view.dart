@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vbtapp/utility/controller/pdf_custom_controller.dart';
+import 'package:vbtapp/utility/point_validator.dart';
 import 'package:vbtapp/widget/pdf_view.dart';
 
 class LicenseValidateView extends StatefulWidget {
@@ -18,6 +19,7 @@ class _LicenseValidateViewState extends State<LicenseValidateView> {
     return Scaffold(
       body: PDFView(
         url: sampleUrl,
+        validator: const PointValidator('a'),
         customController: SyncfusionPDFController(),
       ),
     );

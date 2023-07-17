@@ -27,3 +27,36 @@ class Veli extends Ali {}
 final class M {}
 
 final class Home {}
+
+final class AliView extends StatefulWidget {
+  const AliView({super.key});
+
+  @override
+  State<AliView> createState() => _AliViewState();
+}
+
+final class _AliViewState extends State<AliView> with _AliMixin {
+  @override
+  Widget build(BuildContext context) {
+    ValueListenableBuilder<int>(
+      valueListenable: _counter,
+      builder: (BuildContext context, int value, Widget? child) {
+        return Container();
+      },
+    );
+    return const Placeholder();
+  }
+}
+
+mixin _AliMixin on State<AliView> {
+  final ValueNotifier<int> _counter = ValueNotifier<int>(0);
+
+  void functionName(List args) {
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
+}
